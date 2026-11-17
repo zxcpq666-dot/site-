@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог номеров — Сладкие сны</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">С</div>
+        <div class="logo-text">
+          <span class="logo-name">Сладкие сны</span>
+          <span class="logo-slogan">Сладкие сны ждут вас</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html" class="active">Каталог</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <a href="tel:+78125552424" class="header-phone">+7 (812) 555-24-24</a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="index.html">Главная</a> / Каталог
+  </div>
+
+  <!-- Title -->
+  <section class="section" style="margin-bottom: 24px;">
+    <h1 class="section-title">Номера для вашего отдыха</h1>
+    <p class="section-subtitle">Выберите пространство, в котором вам будет хорошо.</p>
+  </section>
+
+  <!-- Catalog -->
+  <div class="catalog-layout">
+    <!-- Filter -->
+    <aside class="filter-card">
+      <div class="filter-title">Фильтр</div>
+      <div class="filter-group">
+        <div class="filter-group-title">Категория номера</div>
+        <label class="filter-option">
+          <input type="checkbox" name="category" value="standart" checked> Стандарт
+        </label>
+        <label class="filter-option">
+          <input type="checkbox" name="category" value="studio" checked> Студия
+        </label>
+        <label class="filter-option">
+          <input type="checkbox" name="category" value="lux" checked> Люкс
+        </label>
+      </div>
+      <div class="filter-actions">
+        <button class="btn btn-primary btn-full" onclick="applyFilter()">Применить</button>
+        <button class="btn btn-ghost btn-full" onclick="resetFilter()">Сбросить фильтр</button>
+      </div>
+      <div class="filter-help">
+        Нужна помощь с выбором?<br>
+        Подскажем подходящий номер<br>
+        и ответим на ваши вопросы.<br><br>
+        <a href="tel:+78125552424">+7 (812) 555-24-24</a>
+      </div>
+    </aside>
+
+    <!-- Rooms -->
+    <div>
+      <div class="catalog-toolbar">
+        <span id="rooms-count">Все номера · 6 вариантов размещения</span>
+        <span>По умолчанию ↓</span>
+      </div>
+
+      <div class="rooms-grid" id="rooms-grid">
+        <!-- Card 1 -->
+        <article class="room-card" data-category="standart">
+          <div class="room-card-img">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Уютный стандарт">
+          </div>
+          <div class="room-card-body">
+            <span class="room-category">Стандарт</span>
+            <h3 class="room-title">Уютный стандарт</h3>
+            <div class="room-specs">24 м² · 2 гостя · Wi-Fi</div>
+            <div class="room-features">Одна большая кровать · Кондиционер</div>
+            <div class="room-footer">
+              <div class="room-price">4 500 ₽ <span>/ сутки</span></div>
+              <a href="booking.html" class="btn btn-primary btn-full">Забронировать</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="room-card" data-category="standart">
+          <div class="room-card-img">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=80" alt="Стандарт Twin">
+          </div>
+          <div class="room-card-body">
+            <span class="room-category">Стандарт</span>
+            <h3 class="room-title">Стандарт Twin</h3>
+            <div class="room-specs">26 м² · 2 гостя · Wi-Fi</div>
+            <div class="room-features">Две отдельные кровати · Кондиционер</div>
+            <div class="room-footer">
+              <div class="room-price">4 800 ₽ <span>/ сутки</span></div>
+              <a href="booking.html" class="btn btn-primary btn-full">Забронировать</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="room-card" data-category="studio">
+          <div class="room-card-img">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80" alt="Студия с видом на город">
+          </div>
+          <div class="room-card-body">
+            <span class="room-category">Студия</span>
+            <h3 class="room-title">Студия с видом на город</h3>
+            <div class="room-specs">34 м² · 2 гостя · Wi-Fi</div>
+            <div class="room-features">Кровать и зона отдыха · Кондиционер</div>
+            <div class="room-footer">
+              <div class="room-price">7 500 ₽ <span>/ сутки</span></div>
+              <a href="booking.html" class="btn btn-primary btn-full">Забронировать</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="room-card" data-category="studio">
+          <div class="room-card-img">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80" alt="Семейная студия">
+          </div>
+          <div class="room-card-body">
+            <span class="room-category">Студия</span>
+            <h3 class="room-title">Семейная студия</h3>
+            <div class="room-specs">40 м² · 3 гостя · Wi-Fi</div>
+            <div class="room-features">Кровать и удобный диван · Кондиционер</div>
+            <div class="room-footer">
+              <div class="room-price">8 500 ₽ <span>/ сутки</span></div>
+              <a href="booking.html" class="btn btn-primary btn-full">Забронировать</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="room-card" data-category="lux">
+          <div class="room-card-img">
+            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&q=80" alt="Люкс с террасой">
+          </div>
+          <div class="room-card-body">
+            <span class="room-category">Люкс</span>
+            <h3 class="room-title">Люкс с террасой</h3>
+            <div class="room-specs">52 м² · 2 гостя · Wi-Fi</div>
+            <div class="room-features">Терраса и гостиная · Кондиционер</div>
+            <div class="room-footer">
+              <div class="room-price">12 000 ₽ <span>/ сутки</span></div>
+              <a href="booking.html" class="btn btn-primary btn-full">Забронировать</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="room-card" data-category="lux">
+          <div class="room-card-img">
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&q=80" alt="Панорамный люкс">
+          </div>
+          <div class="room-card-body">
+            <span class="room-category">Люкс</span>
+            <h3 class="room-title">Панорамный люкс</h3>
+            <div class="room-specs">64 м² · 4 гостя · Wi-Fi</div>
+            <div class="room-features">Две комнаты и вид на город · Кондиционер</div>
+            <div class="room-footer">
+              <div class="room-price">15 000 ₽ <span>/ сутки</span></div>
+              <a href="booking.html" class="btn btn-primary btn-full">Забронировать</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contacts">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-name">Сладкие сны</div>
+        <p>Место, где хочется остаться.<br>Продуманные номера и тёплая забота о каждом госте — с первого дня.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <p>Санкт-Петербург, ул. Малая Морская, 18</p>
+        <p>Ежедневно, круглосуточно</p>
+        <a href="tel:+78125552424">+7 (812) 555-24-24</a>
+        <a href="mailto:hello@sladkiesny.ru">hello@sladkiesny.ru</a>
+      </div>
+      <div class="footer-col">
+        <h4>Оставайтесь на связи</h4>
+        <a href="#">Telegram ↗</a>
+        <a href="#">ВКонтакте ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Сладкие сны. Все права защищены.</span>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </footer>
+
+  <script>
+    function applyFilter() {
+      const checked = Array.from(document.querySelectorAll('input[name="category"]:checked'))
+        .map(el => el.value);
+      
+      const cards = document.querySelectorAll('.room-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        const cat = card.dataset.category;
+        if (checked.includes(cat)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      document.getElementById('rooms-count').textContent = 
+        `Найдено · ${visible} вариант${visible === 1 ? '' : visible < 5 ? 'а' : 'ов'} размещения`;
+    }
+
+    function resetFilter() {
+      document.querySelectorAll('input[name="category"]').forEach(el => el.checked = true);
+      document.querySelectorAll('.room-card').forEach(card => card.style.display = '');
+      document.getElementById('rooms-count').textContent = 'Все номера · 6 вариантов размещения';
+    }
+  </script>
+</body>
+</html>
